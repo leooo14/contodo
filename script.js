@@ -643,12 +643,7 @@ class MusicPlayer {
                 file: "cancion2.mp3",
                 cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
             },
-             {
-                title: "Canción Romántica pa ti jjadkasdjkd💖",
-                artist: "Para Sandi",
-                file: "cancion2.mp3",
-                cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-            }
+            
         ];
         
         // Añadir archivos locales listados en `localTracks` (rutas relativas)
@@ -1277,5 +1272,6 @@ window.togglePlay = togglePlay;
 window.nextTrack = nextTrack;
 window.previousTrack = previousTrack;
 window.toggleMute = toggleMute;
+
 
 console.log("✨ ¡Script de Sandi completamente cargado y listo! 🎂");
