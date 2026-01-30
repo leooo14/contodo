@@ -531,12 +531,12 @@ function initSpecialEffects() {
 
 let musicPlayer = null;
 
-// Opcional: lista de rutas relativas a archivos dentro de assets/music/
-// Coloca tus archivos en `assets/music/` y añade sus rutas aquí.
-// Ejemplo: ['assets/music/mi-cancion.mp3', 'assets/music/otra.mp3']
+// Opcional: lista de rutas relativas a archivos de audio.
+// Si subiste los MP3 al repositorio en la raíz, usa nombres como 'micancion.mp3'.
+// Ejemplo: ['micancion.mp3', 'cancion1.mp3']
 // Puedes dejarla vacía y seguir usando el botón "Añadir canciones".
 const localTracks = [
-    'assets/music/micancion.mp3',
+    'micancion.mp3',
 ];
 
 function initMusicPlayer() {
@@ -585,25 +585,25 @@ class MusicPlayer {
             {
                 title: "¡Feliz Cumpleaños!:3 🎂",
                 artist: "Para Sandi",
-                file: "assets/music/micancion.mp3",
+                file: "micancion.mp3",
                 cover: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
             },
             {
                 title: "Música de Fiesta 🎉uwuwuwuwu",
                 artist: "¡A celebrar!",
-                file: "assets/music/cancion1.mp3",
+                file: "cancion1.mp3",
                 cover: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
             },
             {
                 title: "Canción Romántica pa ti jjadkasdjkd💖",
                 artist: "Para Sandi",
-                file: "assets/music/cancion2.mp3",
+                file: "cancion2.mp3",
                 cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
             },
              {
                 title: "Canción Romántica pa ti jjadkasdjkd💖",
                 artist: "Para Sandi",
-                file: "assets/music/cancion2.mp3",
+                file: "cancion2.mp3",
                 cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
             }
         ];
