@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡FELIZ 19 SANDI! 🎂🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/cake.ico">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    
+   
+    <button id="partyModeBtn">
+        <i class="fas fa-party-horn"></i> MODO FIESTA
+    </button>
+
+    <header class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <h1 class="title-glitch">¡FELIZ <span class="highlight">19</span> SANDI!</h1>
+            <p class="subtitle">Una página llena de recueldos, amol y uwu</p>
+            <div class="countdown" id="countdown">
+                <div><span id="days">00</span><small>Días</small></div>
+                <div><span id="hours">00</span><small>Horas</small></div>
+                <div><span id="minutes">00</span><small>Min</small></div>
+                <div><span id="seconds">00</span><small>Seg</small></div>
+            </div>
+            <a href="#historia" class="cta-button">¡Descubre tu sorpresa! <i class="fas fa-gift"></i></a>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="#historia"><i class="fas fa-heart"></i> Tu </a></li>
+            <li><a href="#galeria"><i class="fas fa-images"></i> Galería</a></li>
+            <li><a href="#mensajes"><i class="fas fa-comments"></i> Mensajitos</a></li>
+            <li><a href="#musica"><i class="fas fa-music"></i> Musiquita</a></li>
+            <li><a href="#juego"><i class="fas fa-gamepad"></i> Juego</a></li>
+            <li><a href="#sorpresa"><i class="fas fa-star"></i> Sorpresa</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECCIÓN HISTORIA -->
+    <!-- SECCIÓN MUSICA (movida arriba de HISTORIA) -->
+    <section id="musica" class="section dark">
+    <h2><i class="fas fa-music"></i> REPRODUCTOR DE MÚSICA REAL 🎵</h2>
+    <p class="section-subtitle">¡Escucha directamente aquí!</p>
+    
+    <div class="real-player-container">
+        <!-- REPRODUCTOR PRINCIPAL -->
+        <div class="real-player">
+            <div class="player-display">
+                <div class="now-playing">
+                    <div class="album-art-large">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w-600&q=80" 
+                             alt="Portada" id="currentCover">
+                        <div class="vinyl-effect"></div>
+                    </div>
+                    <div class="track-info">
+                        <h3 id="currentTrack">Selecciona una canción</h3>
+                        <p id="currentArtist">Para Sandi 💖</p>
+                        <div class="track-progress">
+                            <span id="currentTime">0:00</span>
+                            <input type="range" id="progressBar" min="0" max="100" value="0">
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CONTROLES -->
+                <div class="player-controls">
+                    <button onclick="previousTrack()" class="control-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button onclick="togglePlay()" class="control-btn play-btn" id="playBtn">
+                        <i class="fas fa-play" id="playIcon"></i>
+                    </button>
+                    <button onclick="nextTrack()" class="control-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button onclick="toggleMute()" class="control-btn">
+                        <i class="fas fa-volume-up" id="volumeIcon"></i>
+                    </button>
+                    <input type="range" id="volumeBar" min="0" max="100" value="80">
+                </div>
+            </div>
+            
+            <!-- LISTA DE CANCIONES -->
+            <div class="playlist-real">
+                <h4><i class="fas fa-list-music"></i> PLAYLIST PARA SANDI</h4>
+                <div id="playlist">
+                    <!-- Las canciones se añaden con JavaScript -->
+                </div>
+                
+                <!-- SUBIR CANCIONES -->
+                <div class="upload-section">
+                    <h5><i class="fas fa-upload"></i> ¿Quieres añadir más canciones?</h5>
+                    <p>Pon los archivos MP3 en <code>assets/music/</code></p>
+                    <input type="file" id="fileUpload" accept=".mp3,.wav,.ogg" multiple webkitdirectory directory style="display: none;">
+                    <button onclick="document.getElementById('fileUpload').click()" class="upload-btn">
+                        <i class="fas fa-plus"></i> Añadir canciones
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MENSAJE ESPECIAL -->
+        <div class="player-message">
+            <p>
+                <i class="fas fa-heart"></i> 
+                <strong>Sandi:</strong> Cada canción aquí fue puesta especialmente para ti. 
+                ¡Disfruta tu música favorita en tu día especial! 
+                <i class="fas fa-heart"></i>
+            </p>
+        </div>
+    </div>
+</section>
+
+    <section id="historia" class="section">
+        <h2><i class="fas fa-book-open"></i> LA HISTORIA DE SANDI</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">MUA</div>
+                <div class="timeline-content">
+                    <h3>¡Llegada de una estrellitaUWU! ✨</h3>
+                    <p>Nace Sandi, asi naciendo la mujer mas linda de este mundito.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">MUA</div>
+                <div class="timeline-content">
+                    <h3>Trabajadora:</h3>
+                    <p>Un magnífico ejemplo a seguilD:</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">MUA</div>
+                <div class="timeline-content">
+                    <h3>ño podria vivir sin tus muajdkasdjkdjk</h3>
+                    <p>tus mua iluminan todo mi ser </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">MUA</div>
+                <div class="timeline-content">
+                    <h3>Gracias pol conectar conmigo 🌟</h3>
+                    <p>Eres la mejor persona que he conocido en toda mi life</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">MUA</div>
+                <div class="timeline-content">
+                    <h3>¡19 AÑITOS LA WAWITA! 🎉</h3>
+                    <p>Una mujer increíble, llena de virtudes, y super bonita:3.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="section dark">
+        <h2><i class="fas fa-camera"></i> GALERÍA DE RECUERDOS</h2>
+        <p class="section-subtitle">Pasa el mouse sobre las fotos para verlas más grandes</p>
+        <div class="gallery">
+            <!-- FOTOS - TÚ AÑADES LAS IMÁGENES LUEGO -->
+            <div class="photo-card">
+                <img src="assets/photos/baby/sandra-bebe.jpg" alt="Sandra bebé" class="gallery-img">
+                <div class="photo-overlay">
+                    <p>¡Qué linda bebé! 👶</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="assets/photos/childhood/sandra-niña.jpg" alt="Sandra de niña" class="gallery-img">
+                <div class="photo-overlay">
+                    <p>Sonrisa contagiosa 😊</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="assets/photos/teen/sandra-adolescente.jpg" alt="Sandra adolescente" class="gallery-img">
+                <div class="photo-overlay">
+                    <p>¡Creciendo tan rápido! 🌱</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="assets/photos/recent/sandra-reciente.jpg" alt="Sandra reciente" class="gallery-img">
+                <div class="photo-overlay">
+                    <p>¡Qué mujer tan increíble! 💖</p>
+                </div>
+            </div>
+            <!-- MÁS FOTOS AQUÍ... -->
+        </div>
+        <div class="gallery-controls">
+            <button id="prevBtn"><i class="fas fa-chevron-left"></i> Anterior</button>
+            <button id="nextBtn">Siguiente <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MENSAJES -->
+    <section id="mensajes" class="section">
+        <h2><i class="fas fa-comment-dots"></i> MENSAJES DE AMOL</h2>
+        <div class="messages-container">
+            <div class="message-card">
+                <div class="message-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="message-content">
+                    <h4>Leo</h4>
+                    <p>Mi niña bonita, que la pases muy bien el dia de hoy , te amo y mucho</p>
+                </div>
+            </div>
+            <div class="message-card">
+                <div class="message-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="message-content">
+                    <h4>Bebe Cleart</h4>
+                    <p>Estoy muy feliz de que seas mi ma, feli cumple ma</p>
+                </div>
+            </div>
+            <div class="message-card">
+                <div class="message-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="message-content">
+                    <h4>Bebe Kira</h4>
+                    <p>Ma, tu me viste cuando era una bebe, gracias pol cuidar mucho de mi, yo siempre te amare</p>
+                </div>
+            </div>
+            <!-- AÑADE MÁS MENSAJES AQUÍ -->
+        </div>
+        <button id="addMessageBtn"><i class="fas fa-plus"></i> Añadir tu mensaje</button>
+    </section>
+
+    
+
+    <!-- JUEGO DE TRIVIA -->
+    <section id="juego" class="section">
+        <h2><i class="fas fa-puzzle-piece"></i> TRIVIA: ¿CUÁNTO SABES DE SANDRA?</h2>
+        <div class="trivia-container">
+            <div class="trivia-question">
+                <h3 id="question">¿Cuál es el color favorito de Sandra?</h3>
+                <div class="options">
+                    <button class="option">Azul</button>
+                    <button class="option">Rosa</button>
+                    <button class="option">Verde</button>
+                    <button class="option">Negro</button>
+                </div>
+            </div>
+            <div class="trivia-score">
+                <h4>Puntuación: <span id="score">0</span>/5</h4>
+                <progress id="triviaProgress" value="0" max="5"></progress>
+                <button id="restartTrivia">Reiniciar juego</button>
+            </div>
+        </div>
+        <div class="easter-egg-hint">
+            <p><i class="fas fa-lightbulb"></i> Pista secreta: Presiona las teclas S-A-N-D-R-A para un regalo especial</p>
+        </div>
+    </section>
+
+    <!-- SORPRESA FINAL -->
+    <section id="sorpresa" class="section dark surprise-section">
+        <h2><i class="fas fa-star"></i> SORPRESITA FINAL</h2>
+        <div class="surprise-content">
+            <div class="surprise-text">
+                <h3>Para Sandra, con todo mi amol:</h3>
+                <p id="secretMessage">Pero enserio enserio te adoro, eres una persona increíble que ilumina cada lugal. En tus 19 años, quiero recordarte lo especial que eres, y lo mucho que te amo ¡Que este año esté lleno de éxitos, viajes, risas y sueños cumplidosm aunque ya lo dije adjkawdj MUAMUAAAAAAAAAAAAAAAAAA! ✨</p>
+                <button id="revealBtn"><i class="fas fa-magic"></i> Revelar mensaje secreto</button>
+            </div>
+            <div class="surprise-image">
+                    <img src="assets/photos/uwu.jpg" alt="Regalo sorpresa">
+            </div>
+        </div>
+        </div>
+
+        <!-- GALERÍA DE VIDEOS: coloca tus archivos MP4 en la carpeta videos/ -->
+        <div class="video-gallery">
+            <div class="video-card">
+                <video controls preload="metadata" poster="assets/photos/uwu.jpg">
+                    <source src="videos/video1.mp4" type="video/mp4">
+                    Tu navegador no soporta video.
+                </video>
+                <div class="video-caption">Video 1 - Título</div>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata" poster="assets/photos/uwu.jpg">
+                    <source src="videos/video2.mp4" type="video/mp4">
+                    Tu navegador no soporta video.
+                </video>
+                <div class="video-caption">Video 2 - Título</div>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata" poster="assets/photos/uwu.jpg">
+                    <source src="videos/video3.mp4" type="video/mp4">
+                    Tu navegador no soporta video.
+                </video>
+                <div class="video-caption">Video 3 - Título</div>
+            </div>
+        </div>
+
+        <div class="hashtag">
+            <p>TE AMO <strong>TE AMO</strong> TE AMO</p>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>Hecho con <i class="fas fa-heart pulse"></i> para el cum de Sandra</p>
+        <p>© 2026 - ¡Felices 19 AÑITOS!</p>
+        <div class="footer-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
