@@ -36,7 +36,50 @@ document.addEventListener('DOMContentLoaded', function() {
     initMusicPlayer();
     // 11. LAYOUT GALERÍA DE VIDEO (auto)
     initVideoGalleryLayout();
+    // 12. AUTOPLAY VIDEOS (muted to satisfy browser policies)
+    initVideoAutoplay();
 });
+
+// ============================================
+// AUTOPLAY VIDEO GALLERY
+// ============================================
+function initVideoAutoplay() {
+    const gallery = document.querySelector('.video-gallery');
+    if (!gallery) return;
+
+    const videos = gallery.querySelectorAll('video');
+    if (!videos || videos.length === 0) return;
+
+    // Try to autoplay each video muted. Browsers allow muted autoplay.
+    videos.forEach(video => {
+        try {
+            video.muted = true;
+            video.playsInline = true;
+            video.autoplay = true;
+            // set preload to metadata to avoid double requests
+            video.setAttribute('preload', 'metadata');
+            // attempt to play; if blocked, it will fail silently
+            const p = video.play();
+            if (p && p.then) p.catch(() => {});
+        } catch (e) {
+            console.warn('Autoplay attempt failed for a video', e);
+        }
+    });
+
+    // On first user gesture, unmute all videos so sound works
+    function onFirstGesture() {
+        videos.forEach(v => {
+            try {
+                v.muted = false;
+            } catch (e) {}
+        });
+        window.removeEventListener('click', onFirstGesture);
+        window.removeEventListener('keydown', onFirstGesture);
+    }
+
+    window.addEventListener('click', onFirstGesture);
+    window.addEventListener('keydown', onFirstGesture);
+}
 
 // ============================================
 // 1. PARTÍCULAS (igual que antes)
